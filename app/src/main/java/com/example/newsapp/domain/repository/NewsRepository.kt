@@ -1,6 +1,5 @@
 package com.example.newsapp.domain.repository
 
-import com.example.newsapp.BuildConfig
 import com.example.newsapp.data.model.APIResponse
 import com.example.newsapp.data.model.Article
 import com.example.newsapp.data.util.Resource
