@@ -1,5 +1,7 @@
 package com.example.newsapp.presentation.adapter
 
+import android.net.wifi.p2p.WifiP2pManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.contentValuesOf
@@ -47,9 +49,21 @@ class NewsAdapter:RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
             binding.tvPublishedAt.text = article.publishedAt
             binding.tvSource.text = article.source.toString()
             Glide.with(binding.ivArticleImage.context).load(article.urlToImage).into(binding.ivArticleImage)
-        }
 
+            binding.root.setOnClickListener {
+                onItemClickListener?.let {
+                    it(article)
+                    Log.i("url",article.url!!.toString())
+                }
+            }
+        }
     }
+    private var onItemClickListener :((Article)->Unit)?=null
+
+    fun setOnItemClickListener(listener : (Article)->Unit){
+        onItemClickListener = listener
+    }
+
 
 
 }

@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".InfoFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="info_fragment" />
+   <WebView
+       android:id="@+id/article_web_view"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"/>
 
 </FrameLayout>
